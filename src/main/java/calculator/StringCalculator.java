@@ -36,6 +36,7 @@ public class StringCalculator {
 
         for (String token : tokens) {
             int number = parseNumber(token);
+            validateNoNegative(number);
             sum += number;
         }
 
@@ -47,6 +48,12 @@ public class StringCalculator {
             return Integer.parseInt(token.trim());
         } catch (NumberFormatException e) {
             throw new IllegalArgumentException("숫자가 아닌 값이 포함되어 있습니다: " + token);
+        }
+    }
+
+    private void validateNoNegative(int number) {
+        if (number < 0) {
+            throw new IllegalArgumentException("음수는 입력할 수 없습니다: " + number);
         }
     }
 }
