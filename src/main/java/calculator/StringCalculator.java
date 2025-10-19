@@ -18,7 +18,13 @@ public class StringCalculator {
 
         if (input.startsWith(CUSTOM_DELIMITER_PREFIX)) {
             int delimiterEndIndex = input.indexOf(CUSTOM_DELIMITER_SUFFIX);
+            if (delimiterEndIndex == -1) {
+                throw new IllegalArgumentException("잘못된 커스텀 구분자 형식입니다.");
+            }
             String customDelimiter = input.substring(2, delimiterEndIndex);
+            if (customDelimiter.isEmpty()) {
+                throw new IllegalArgumentException("커스텀 구분자가 비어있습니다.");
+            }
             delimiter = Pattern.quote(customDelimiter);
             numbersString = input.substring(delimiterEndIndex + 2);
         }

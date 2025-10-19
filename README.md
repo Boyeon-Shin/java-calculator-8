@@ -24,5 +24,6 @@
 - [x] 결과 출력
 
 ### 5. 예외 처리
-- [ ] 음수 입력 시 IllegalArgumentException 발생
-- [ ] 숫자가 아닌 값 입력 시 IllegalArgumentException 발생
+- [x] 음수 입력 시 IllegalArgumentException 발생
+- [x] 숫자가 아닌 값 입력 시 IllegalArgumentException 발생
+- [x] 잘못된 커스텀 구분자 형식 입력시 IllegalArgumentException 발생
