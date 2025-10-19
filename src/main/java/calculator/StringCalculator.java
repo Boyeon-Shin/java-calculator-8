@@ -23,6 +23,14 @@ public class StringCalculator {
             numbersString = input.substring(delimiterEndIndex + 2);
         }
 
+        return sumNumbers(numbersString, delimiter);
+    }
+
+
+    private int sumNumbers(String numbersString, String delimiter) {
+        if (numbersString.isEmpty()) {
+            return 0;
+        }
         String[] tokens = numbersString.split(delimiter);
         int sum = 0;
 
